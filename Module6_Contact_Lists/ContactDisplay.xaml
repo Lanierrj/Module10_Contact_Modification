@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Module6_Contact_Lists"
+              xmlns:models="clr-namespace:Module6_Contact_Lists"
+             x:DataType="vm:ContactDisplayViewModel"
+             x:Class="Module6_Contact_Lists.ContactDisplay">
+    <CollectionView x:Name="LvContacts" 
+                    SelectionMode="Single"
+                    SelectionChanged="LvContacts_SelectionChanged"
+                    ItemsSource="{Binding Contacts}">
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical"/>
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="{x:Type models:Contact}">
+                <VerticalStackLayout Padding="-1">
+                    <Border>
+                        <VerticalStackLayout>
+                            <Label FontSize="Large" Text="{Binding Name}" VerticalOptions="Center"/>
+                            <Label FontSize="Medium" Text="{Binding Email}" VerticalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </VerticalStackLayout>
+            </DataTemplate> 
+
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+</ContentPage>

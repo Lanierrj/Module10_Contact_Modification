@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Module6_Contact_Lists"
+             x:DataType="vm:ContactDisplayViewModel"
+             x:Class="Module6_Contact_Lists.MainPage">
+    <VerticalStackLayout Padding="10" Spacing="10">
+    <Entry x:Name="name" Placeholder="Contact Name" Text="{Binding Contact.Name}"/>
+    <Entry x:Name="email" Placeholder="Contact Email" Text="{Binding Contact.Email}"/>
+    <Entry x:Name="phonenumber" Placeholder="Contact Phone Number" Text="{Binding Contact.PhoneNumber}"/>
+        <Entry x:Name="desription" Placeholder="Contact Description" Text="{Binding Contact.Description}"/>
+    <Button x:Name="addButton" Text="Add Contact" Command="{Binding AddCommand}"/>
+    <Button Text="View Contacts" Clicked="Button_Clicked"/>
+    </VerticalStackLayout>
+
+</ContentPage>
